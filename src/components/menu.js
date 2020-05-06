@@ -23,6 +23,16 @@ export class Menu extends Component {
                     <Item itemPicture={itemPhotoTemp2} itemName={"Burger de vita"} itemPrice={21} />
                     <Item itemPicture={itemPhotoTemp3} itemName={"Salata Ceasar"} itemPrice={16} />
 
+                    <Item itemPicture={itemPhotoTemp3} itemName={"Salata Ceasar"} itemPrice={16} />
+                    <Item itemPicture={itemPhotoTemp1} itemName={"Ciorba de perisoare"} itemPrice={12} />
+                    <Item itemPicture={itemPhotoTemp2} itemName={"Burger de vita"} itemPrice={21} />
+                    <Item itemPicture={itemPhotoTemp3} itemName={"Salata Ceasar"} itemPrice={16} />
+                    <Item itemPicture={itemPhotoTemp3} itemName={"Salata Ceasar"} itemPrice={16} />
+                    <Item itemPicture={itemPhotoTemp2} itemName={"Burger de vita"} itemPrice={21} />
+                   
+                   
+
+
 
                 </div>
             </div>

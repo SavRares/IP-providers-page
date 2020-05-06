@@ -30,9 +30,9 @@ class StarRating extends Component
     render() //This will require more work, since it isn't responsive and for some reason pictures get shrunk down to 0px on smaller resolutions
     {
         return(
-            <Container style={ { background: 'rgba(255, 142, 114, 1)', height: '100%'}}>
-                <Row>
-                    <Col sm lg={2}>
+            <Container style={ { background: 'rgba(255, 142, 114, 1)', height: '100%', minHeight: '40px'}}>
+                <Row lg={5} sm={5} md={5}>
+                    <Col lg={2}>
                     {this.props.score >= 1 ?
                         this.props.score >=2 ?
                         <Image src={goldStar} alt={""} fluid/>  //score 2+
@@ -40,7 +40,7 @@ class StarRating extends Component
                         : <Image src={emptyStar} alt={""} fluid/> //score zero; this can't really show up
                     }
                     </Col>
-                    <Col sm lg={2}>
+                    <Col lg={2}>
                         {this.props.score >= 3 ?
                             this.props.score >=4 ?
                                 <Image src={goldStar} alt={""} fluid/>  //score 4+
@@ -48,7 +48,7 @@ class StarRating extends Component
                             : <Image src={emptyStar} alt={""} fluid/> //score 2 exact
                         }
                     </Col>
-                    <Col sm lg={2}>
+                    <Col lg={2}>
                         {this.props.score >= 5 ?
                             this.props.score >=6 ?
                                 <Image src={goldStar} alt={""} fluid/>  //score 6+
@@ -56,7 +56,7 @@ class StarRating extends Component
                             : <Image src={emptyStar} alt={""} fluid/> //score 4 exact
                         }
                     </Col>
-                    <Col sm lg={2}>
+                    <Col lg={2}>
                         {this.props.score >= 7 ?
                             this.props.score >=8 ?
                                 <Image src={goldStar} alt={""} fluid/>  //score 8+
@@ -112,8 +112,8 @@ class Review extends Component {
     return (
         <Container style={ { background: 'rgba(247, 231, 217, 1)',  justifyContent: 'center', alignItems: 'center', marginTop: '10px' } }>
           <Row xs={5} style={ { background: 'rgba(255, 142, 114, 1)'}}>
-            <Col sm lg={1.5}><Image src={this.state.userPicture} alt={"Profile Picture"} style ={ {height: '100%', width:'100%'}} fluid/></Col>
-            <Col sm lg={1.5}>{this.state.username}</Col>
+            <Col sm lg={2}><Image src={this.state.userPicture} alt={"Profile Picture"} style ={ {height: '48px', width:'40px'}} fluid/></Col>
+            <Col sm lg={2}>{this.state.username}</Col>
             <Col sm lg={8}> <StarRating score={this.state.score}/> </Col>
               {
                   //Look at the xs breakpoint thing, since the way it is now isn't proper; also, look into how to write actual comments in these returns
@@ -126,7 +126,7 @@ class Review extends Component {
             <div>
                  {this.state.content.substring(0, 100)}
                 {(this.state.content.length > 100) &&
-                <a style={{color: 'blue'}} onClick={this.showButton}> Read more</a>
+                <a style={{color: 'blue', cursor: 'pointer'}} onClick={this.showButton}> Read more</a>
                 }
             </div>
           }
@@ -134,7 +134,7 @@ class Review extends Component {
             expanded &&
             <div>
                 {this.state.content}
-                <a style={{color: 'blue'}} onClick={ this.showButton }> Read less</a>
+                <a style={{color: 'blue', cursor: 'pointer'}} onClick={ this.showButton }> Read less</a>
             </div>
           }
 

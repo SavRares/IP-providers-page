@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Button} from 'react-bootstrap'
 
 export class Order extends Component {
     render() {
         return (
-              <div class="ordres" id='order'>
-                <a href="#" class='buttonlink'><span>Order now!</span></a>
-              </div>
+          <Button id="ordres" color="primary">Order now</Button>
         );
     }
 }

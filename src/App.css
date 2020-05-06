@@ -55,15 +55,11 @@ html, body {
   color: white;
 }
 
-.backbutton {
-  max-width: 10vw;
-  min-width: 100px;
-  width: 200px;
+#backbutton {
   background-color: rgba(56, 97, 80, 1);
-  color: rgba(167, 29, 49, 1);
-  border: 4px solid rgba(0, 0, 0, 1);
   position: sticky;
-  transition: 0.3s;
+  margin-left: 25px;
+  height: 50px;
 }
 
 .backbuttonstyle {
@@ -74,22 +70,11 @@ html, body {
   width: 100%;
 }
 
-.backbutton:hover {
-  background: rgba(255, 142, 114, 1);
-  border-color: rgba(56, 97, 80, 1);
-  width: 250px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
 
 #wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  background-color: rgba(247, 231, 217, 1);
-  width: 1500px;
+  
+  
+  width: 80vw;
   border-radius: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -108,156 +93,183 @@ html, body {
 }
 
 #schedule {
-  background-color: rgb(209, 193, 179);
+  background-color: rgb(231, 215, 200);
   margin-right: auto;
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  box-shadow: 5px 10px 8px #888888;
+  -moz-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
 }
 
-
-#header {
-  flex-grow: 1;
-  border-bottom: 3px solid rgba(0, 0, 0, 1);
-  border-radius: 5%;
-  align-self: stretch;
-  width: 100%;
-  border-radius: 10px;
-  
-}
-
-#header h2 {
-  color: rgba(245, 12, 31, 1);
+#information {
+  background-color: rgb(231, 215, 200);
+  margin-right: auto;
   padding: 10px;
-  text-align: center;
+  margin: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  -moz-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
 }
 
-#left {
-  flex: 1;
-  margin: 5px;
+p.inline{
+  display: inline;
 }
 
-#right {
-  flex: 2;
+#reviewsdiv{
+  background-color: rgb(231, 215, 200);
+  margin-bottom: auto;
+  padding: 10px;
   margin: 5px;
+  margin-top: 25px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+}
+
+
+
+h2.restauranttitle{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  bottom: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 5px;
+}
+
+.header{
+  position: relative;
+
 }
 
 #content {
-  background-color: rgb(209, 193, 179);
+  background-color: rgb(231, 215, 200);
   margin-bottom: auto;
   padding: 5px;
   margin: 5px;
   margin-bottom: 25px;
   border-radius: 10px;
-  box-shadow: 5px 10px 8px #888888;
+  -moz-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
 }
 
 #menu {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(209, 193, 179);
+  position: relative;
+  background-color: rgb(231, 215, 200);
   padding: 5px;
   align-self: center;
   margin: 5px;
-  box-shadow: 5px 10px 8px #888888;
+  -moz-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
+  box-shadow: 0px 0px 15px rgba(255, 142, 114, 0.8);
   border-radius: 10px;
 }
 
-#tagslist {
-  margin-top: 25px;
-  width: 100%;
+ul.inline-block{
+  display: inline;
+  padding-left: 0;
+
 }
 
-#tagslist ul{
-  list-style-type: none;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-}
-
-#tagslist ul a{
-  text-decoration: none;
-  padding: 10px;
-  color: rgba(0, 0, 0, 1);
-  font-size: 18px;
+ul span{
+  margin: 1%;
 }
 
 .tag{
   opacity: 0.85;
-  border-radius: 25%;
- 
+  cursor: pointer;
   background-color: rgba(255, 142, 114, 1);
   transition: 0.25s;
-  flex-basis: content;
+  border-radius: 25px;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .tag:hover{
-  background-color: rgba(167, 29, 49, 1);
-  border-radius: 5%;
   opacity: 1;
   transition: 0.35s;
 }
 
-#tagslist ul a:hover{
-  color: rgba(255, 255, 255, 1);
+
+.schbuttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.ordres {
-  text-align: center;
-  border-radius: 50px;
-  max-width: 150px;
-  min-width: 50px;
-  width: 140px;
+#ordres {
+  border-radius: 15px;
+  max-width: 120px;
+  min-width: 35px;
+  width: 120px;
   background-color: rgba(56, 97, 80, 1);
-  border: 2px solid rgba(167, 29, 49, 1);
-  opacity: 1;
+  opacity: 0.85;
   transition: 0.3s;
-  padding: 3px;
-  margin-top: 10px;
+  padding: 5px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.ordres:hover {
+@media screen and (max-width: 1085px) {
+  #ordres{
+    margin-top: 15px;
+  }
+}
+
+
+#ordres:hover {
   border-radius: 25%;
   opacity: 1;
-  background: rgba(167, 29, 49, 1);
-  border-color: rgba(56, 97, 80, 1);
   width: 150px;
   transition: 0.3s;
   cursor: pointer;
 }
 
-#order{
-  margin-top: 15px;
+#ordres:focus{
+  background-color: rgb(56, 148, 110);
 }
 
 #items{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-evenly;
 }
 
 #menuitem{
   cursor: pointer;
-  max-width: 25%;
-  max-height: 25%;
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  margin: 1%;
   justify-content: space-between;
   opacity: 0.9;
   transition: 0.15s;
   border: 1px solid rgba(167, 29, 49, 1);
   border-radius: 5px;
-  box-shadow: 2px 5px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px rgba(145, 131, 131, 0.8);
   align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 23%;
+}
+
+#menuitem:nth-last-child(-n+3){
+  flex-grow: 0;
+}
+
+#menuitem:hover{
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 #menuitem .photo{
@@ -272,11 +284,12 @@ html, body {
 
 #menuitem .utility{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   padding: 10px;
   margin-top: auto;
   margin-bottom: auto;
+  text-align: center;
 }
 
 .utility .name{
@@ -285,15 +298,14 @@ html, body {
   color: rgba(167, 29, 49, 1);
 }
 
-.price{
+.utility .price{
   padding: 5px;
-  font-size: 18px;
-  border: 2px solid rgba(255, 142, 114, 1);
   border-radius: 15px;
   flex: 1;
-  background-color: rgba(167, 29, 49, 1);
-  color: rgba(255, 255, 255, 1);
-  font-size: 15px;
+  color: rgba(167, 29, 49, 1);
+  font-size: 18px;
+  border: 1px solid rgba(255, 142, 114, 1);
+  margin-top: auto;
 }
 
 .utility .name,
@@ -307,7 +319,43 @@ html, body {
   transition: 0.15s;
 }
 
+@media screen and (min-width: 980px) {
+  #items {
+      flex-basis: 33%;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  #items {
+      flex-direction: column;
+      align-items: center;
+  }
+  #menuitem{
+    align-self: center;
+    max-width: 60%;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  #menuitem{
+    align-self: center;
+    max-width: 70%;
+    width: 70%;
+  }
+
+  #wrapper{
+    width: 95vw;
+  }
+}
+
+
 #content p{
   margin-top: 10px;
   padding: 10px;
+}
+
+.schbuttons{
+  display: flex;
+  flex-direction: row;
 }
