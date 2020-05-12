@@ -69,29 +69,37 @@ class StarRating extends Component
 
 }
 
+
+/*
+    To do: API calls
+*/
+
 export class Information extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            description: props.description,
+            rating: props.rating,
+            specials: props.specials
+        }
+    };
+
+    
+
+
     render() {
         return (
             <div id="information">
                 <ul className="inline-block">
                     <p className="inline">Tags: </p>
-                    <Badge pill variant="info" bsPrefix="tag">
-                        Tag1
-                    </Badge>
-                    <Badge pill variant="info" bsPrefix="tag">
-                        Tag2
-                    </Badge>
-                    <Badge pill variant="info" bsPrefix="tag">
-                        Tag3
-                    </Badge>
-                    <Badge pill variant="info" bsPrefix="tag">
-                        Tag4
-                    </Badge>
+                    {this.state.specials.map(item => (<Badge pill variant="info" bsPrefix="tag">
+                        {item}
+                    </Badge>) )}
                 </ul>
                 <hr></hr>
-                <p> Some informations about the Restaurant here </p>
+                <p>{this.state.description}</p>
                 <hr></hr>
-                <StarRating score={7}/>
+                <StarRating score={this.state.rating}/>
             </div>
         );
     }

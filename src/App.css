@@ -248,7 +248,7 @@ ul span{
 #menuitem{
   cursor: pointer;
   padding: 10px;
-  margin: 1%;
+  margin: 2%;
   justify-content: space-between;
   opacity: 0.9;
   transition: 0.15s;
@@ -259,7 +259,7 @@ ul span{
   box-shadow: 0 0 5px rgba(145, 131, 131, 0.8);
   align-self: stretch;
   flex-grow: 1;
-  flex-basis: 23%;
+  flex-basis: 29%;
 }
 
 #menuitem:nth-last-child(-n+3){
@@ -270,6 +270,11 @@ ul span{
   -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #menuitem .photo{

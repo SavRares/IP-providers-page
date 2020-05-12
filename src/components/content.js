@@ -4,33 +4,28 @@ import Carousel from 'react-bootstrap/Carousel'
 
 export class Content extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+           providerName: props.providerName,
+           images: props.providerImages
+        }
+    }
+
     render() {
         return (
             <div id="content">
                 <div className="header">
-                    <h2 className="text-center restauranttitle" >Restaurant McRestaurantFace</h2>
+                    <h2 className="text-center restauranttitle" >{this.state.providerName}</h2>
                     <Carousel>
-                        <Carousel.Item>
+                        {this.state.images.map(item => ( <Carousel.Item>
                         <img
+                            height={600}
                             className="d-block w-100"
-                            src={require('../Images/car.jpg')}
+                            src={item}
                             alt="First slide"
                         />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={require('../Images/car.jpg')}
-                            alt="Second slide"
-                        />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={require('../Images/car.jpg')}
-                            alt="Third slide"
-                        />
-                        </Carousel.Item>
+                        </Carousel.Item>) )}
                     </Carousel>
                 </div>
            
