@@ -30,49 +30,47 @@ class StarRating extends Component
     render() //This will require more work, since it isn't responsive and for some reason pictures get shrunk down to 0px on smaller resolutions
     {
         return(
-            <Container style={ { background: 'rgba(255, 142, 114, 1)', height: '100%', minHeight: '40px'}}>
-                <Row lg={5} sm={5} md={5}>
-                    <Col lg={2}>
-                    {this.props.score >= 1 ?
-                        this.props.score >=2 ?
-                        <Image src={goldStar} alt={""} fluid/>  //score 2+
-                        : <Image src={halfStar} alt={""} fluid/> //score 1
-                        : <Image src={emptyStar} alt={""} fluid/> //score zero; this can't really show up
-                    }
-                    </Col>
-                    <Col lg={2}>
+            <Container style={ { background: 'rgba(255, 142, 114, 1)', display: 'flex'}}>
+                    <div style={ {flex: "1", margin: "1%"}}>
+                        {this.props.score >= 1 ?
+                            this.props.score >=2 ?
+                            <Image src={goldStar} alt={""} style={{height: "100%", width: "100%"}}/>  //score 2+
+                            : <Image src={halfStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 1
+                            : <Image src={emptyStar} alt={""} style={{height: "100%", width: "100%"}}/> //score zero; this can't really show up
+                        }
+                    </div>
+                    <div style={ {flex: "1", margin: "1%"}}>
                         {this.props.score >= 3 ?
                             this.props.score >=4 ?
-                                <Image src={goldStar} alt={""} fluid/>  //score 4+
-                                : <Image src={halfStar} alt={""} fluid/> //score 3
-                            : <Image src={emptyStar} alt={""} fluid/> //score 2 exact
+                                <Image src={goldStar} alt={""} style={{height: "100%", width: "100%"}}/>  //score 4+
+                                : <Image src={halfStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 3
+                            : <Image src={emptyStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 2 exact
                         }
-                    </Col>
-                    <Col lg={2}>
+                    </div>
+                    <div style={ {flex: "1", margin: "1%"}}>
                         {this.props.score >= 5 ?
                             this.props.score >=6 ?
-                                <Image src={goldStar} alt={""} fluid/>  //score 6+
-                                : <Image src={halfStar} alt={""} fluid/> //score 5
-                            : <Image src={emptyStar} alt={""} fluid/> //score 4 exact
+                                <Image src={goldStar} alt={""} style={{height: "100%", width: "100%"}}/>  //score 6+
+                                : <Image src={halfStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 5
+                            : <Image src={emptyStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 4 exact
                         }
-                    </Col>
-                    <Col lg={2}>
+                     </div>
+                     <div style={ {flex: "1", margin: "1%"}}>
                         {this.props.score >= 7 ?
                             this.props.score >=8 ?
-                                <Image src={goldStar} alt={""} fluid/>  //score 8+
-                                : <Image src={halfStar} alt={""} fluid/> //score 7
-                            : <Image src={emptyStar} alt={""} fluid/> //score 6 exact
+                                <Image src={goldStar} alt={""} style={{height: "100%", width: "100%"}}/>  //score 8+
+                                : <Image src={halfStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 7
+                            : <Image src={emptyStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 6 exact
                         }
-                    </Col>
-                    <Col sm lg={2}>
+                     </div>
+                     <div style={ {flex: "1", margin: "1%"}}>
                         {this.props.score >= 9 ?
                             this.props.score >=10 ?
-                                <Image src={goldStar} alt={""} fluid/>  //score 10
-                                : <Image src={halfStar} alt={""} fluid/> //score 9
-                            : <Image src={emptyStar} alt={""} fluid/> //score 8 exact
+                                <Image src={goldStar} alt={""} style={{height: "100%", width: "100%"}}/>  //score 10
+                                : <Image src={halfStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 9
+                            : <Image src={emptyStar} alt={""} style={{height: "100%", width: "100%"}}/> //score 8 exact
                         }
-                    </Col>
-                </Row>
+                    </div>
             </Container>
         ) //Possibly cut the stars to half stars? Also, write the number right after the score?
     }
@@ -110,15 +108,15 @@ class Review extends Component {
   render() { //please note that colors are magenta, red and blue so that they're obviously visible and this should be changed when styled, to fit the rest of the page
     const { expanded } = this.state
     return (
-        <Container style={ { background: 'rgba(247, 231, 217, 1)',  justifyContent: 'center', alignItems: 'center', marginTop: '10px' } }>
-          <Row xs={5} style={ { background: 'rgba(255, 142, 114, 1)'}}>
-            <Col sm lg={2}><Image src={this.state.userPicture} alt={"Profile Picture"} style ={ {height: '48px', width:'40px'}} fluid/></Col>
-            <Col sm lg={2}>{this.state.username}</Col>
-            <Col sm lg={8}> <StarRating score={this.state.score}/> </Col>
+        <Container style={ { background: 'rgba(247, 231, 217, 1)', display: "flex", flexDirection: "column", justifyContent: "stretch",  marginTop: '10px'} }>
+          <div style={ { background: 'rgba(255, 142, 114, 1)', display: "flex", flexDirection: "row", height: "75px", width: "100%", padding: "1%" }}>
+            <div style={{flex: "2", margin: "1%"}}><Image src={this.state.userPicture} alt={"Profile Picture"} style={{height: "100%", width: "100%"}}/></div>
+            <div style={{flex: "1", margin: "1%"}}>{this.state.username}</div>
+            <div style={{flex: "8", margin: "1%"}}><StarRating score={this.state.score}/> </div>
               {
                   //Look at the xs breakpoint thing, since the way it is now isn't proper; also, look into how to write actual comments in these returns
               }
-          </Row>
+          </div>
 
           <Row>
           {
