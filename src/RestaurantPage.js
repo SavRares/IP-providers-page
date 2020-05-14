@@ -53,10 +53,17 @@ import axios from 'axios';
 */
 
 
-export class App extends Component {
-  state = {
+export class RestaurantPage extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      providerId: props.providerId
+   }
+  }
+
+  vars = {
     isLoading: true,
-    id: "5eb175094afbf654966cb690",
     courses: [],
     providerName: null,
     providerImages: [],
@@ -69,7 +76,7 @@ export class App extends Component {
 
   componentDidMount()
   {
-      axios.get("http://localhost:4000/api/providers/" + this.state.id)
+      axios.get("http://localhost:4000/api/providers/" + this.state.providerId)
         .then(response =>
           {
             this.setState({    
@@ -85,8 +92,8 @@ export class App extends Component {
   }
 
     render(){
-      if (this.state.isLoading) {
-        return(<p>Loading...</p>)
+      if (this.vars.isLoading) {
+        return(<p>Loading...{this.state.providerId}</p>)
       } else {
 
         return (
@@ -99,11 +106,11 @@ export class App extends Component {
               <div className='page'>
                 <BackButton />
                 <div id="wrapper">
-                <Content providerName={this.state.providerName} providerImages={this.state.providerImages} />
+                <Content providerName={this.vars.providerName} providerImages={this.vars.providerImages} />
                   <Row xl={2} lg={2} md={2} sm={2} xs={1}>
                     <Col xl={{span: 4}} lg={{span: 4}} md={{span: 4}} sm={{span: 4}}>
-                      <Information description={this.state.description} rating={this.state.rating} specials={this.state.specials} />
-                      <Schedule schedule={this.state.schedule} />
+                      <Information description={this.vars.description} rating={this.vars.rating} specials={this.vars.specials} />
+                      <Schedule schedule={this.vars.schedule} />
                       <div id="reviewsdiv">
                           <Review id={1} userID={1} userPicture={profileTemp} username={"George Bright"} score={5} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum blandit condimentum. Morbi sodales libero cursus, bibendum nisl at, feugiat quam. Curabitur molestie sed dui luctus facilisis. Phasellus et enim a libero interdum sagittis eu eget justo. Duis suscipit tincidunt aliquam. Nulla nec gravida magna. Vestibulum laoreet diam ut tortor pretium ullamcorper. Integer sed felis quis justo imperdiet maximus eget ut mi. Pellentesque placerat facilisis nisi eu laoreet. Suspendisse commodo tempor risus, vitae feugiat enim malesuada non. Aenean lacinia odio massa, quis scelerisque lectus rhoncus volutpat. Nullam quis rhoncus dui. Donec lacinia sem porta augue tempus semper. Quisque porta egestas mauris, sed pretium nunc. Aliquam et eros porta, elementum diam ut, vulputate mauris. Pellentesque id eleifend lorem, eget blandit mi."}/>
                           <Review id={2} userID={3} userPicture={profileTemp} username={"John Hunter"} score={1} content={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rutrum blandit condimentum. Morbi sodales libero cursus, bibendum nisl at, feugiat quam. Curabitur molestie sed dui luctus facilisis. Phasellus et enim a libero interdum sagittis eu eget justo. Duis suscipit tincidunt aliquam. Nulla nec gravida magna. Vestibulum laoreet diam ut tortor pretium ullamcorper. Integer sed felis quis justo imperdiet maximus eget ut mi. Pellentesque placerat facilisis nisi eu laoreet. Suspendisse commodo tempor risus, vitae feugiat enim malesuada non. Aenean lacinia odio massa, quis scelerisque lectus rhoncus volutpat. Nullam quis rhoncus dui. Donec lacinia sem porta augue tempus semper. Quisque porta egestas mauris, sed pretium nunc. Aliquam et eros porta, elementum diam ut, vulputate mauris. Pellentesque id eleifend lorem, eget blandit mi."}/>
@@ -116,7 +123,7 @@ export class App extends Component {
                       </div>
                     </Col>
                     <Col xl={{span: 8}} lg={{span: 8}} md={{span: 8}} sm={{span: 8}}>
-                      <Menu courses={this.state.courses}/>
+                      <Menu courses={this.vars.courses}/>
                     </Col>
                   </Row>
                 </div>
@@ -128,4 +135,4 @@ export class App extends Component {
     }
 }
 
-export default App;
+export default RestaurantPage;
